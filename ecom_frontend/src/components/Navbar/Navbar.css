@@ -1,0 +1,199 @@
+/* Light Theme (default) */
+.navbar {
+  background-color: #F9FAFB; /* Soft White */
+  box-shadow: 0 2px 4px rgba(17, 24, 39, 0.1); /* Dark Gray shadow */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1F2937; /* Charcoal Gray */
+  text-decoration: none;
+}
+
+.navbar-search {
+  max-width: 500px;
+  width: 100%;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231F2937' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Charcoal Gray for hamburger icon */
+}
+
+.input-group-text {
+  background-color: #F9FAFB; /* Soft White */
+  border: 1px solid #D1D5DB; /* Light Gray */
+  color: #6B7280; /* Slate Gray for search icon */
+}
+
+.form-control {
+  border: 1px solid #D1D5DB; /* Light Gray */
+  color: #1F2937; /* Charcoal Gray */
+}
+
+.form-control::placeholder {
+  color: #6B7280; /* Slate Gray */
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #1F2937; /* Charcoal Gray */
+}
+
+.cart svg {
+  font-size: 1.5rem;
+  color: #1F2937; /* Charcoal Gray */
+}
+
+.btn-primary {
+  background-color: #1E40AF; /* Navy Blue */
+  border-color: #1E40AF;
+  color: #F9FAFB; /* Soft White */
+}
+
+.btn-primary:hover {
+  background-color: #1E3A8A; /* Slightly darker Navy Blue */
+  border-color: #1E3A8A;
+}
+
+.btn-secondary {
+  background-color: #F43F5E; /* Bright Coral */
+  border-color: #F43F5E;
+  color: #F9FAFB; /* Soft White */
+}
+
+.btn-secondary:hover {
+  background-color: #E11D48; /* Slightly darker Bright Coral */
+  border-color: #E11D48;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #F9FAFB; /* Soft White */
+  border-right: 1px solid #D1D5DB; /* Light Gray */
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar h3 {
+  font-size: 1.25rem;
+  color: #1F2937; /* Charcoal Gray */
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-link {
+  color: #1F2937; /* Charcoal Gray */
+  padding: 10px 0;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #10B981; /* Success Green */
+  color: #F9FAFB; /* Soft White */
+  border-radius: 5px;
+}
+
+.sidebar .nav-link.active {
+  background-color: #1E40AF; /* Navy Blue */
+  color: #F9FAFB; /* Soft White */
+  border-radius: 5px;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #1F2937; /* Charcoal Gray */
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  color: #F43F5E; /* Bright Coral */
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: #111827; /* Dark Gray */
+    box-shadow: 0 2px 4px rgba(249, 250, 251, 0.1); /* Soft White shadow */
+  }
+
+  .navbar-brand {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D1D5DB' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Light Gray for hamburger icon */
+  }
+
+  .input-group-text {
+    background-color: #111827; /* Dark Gray */
+    border: 1px solid #6B7280; /* Slate Gray */
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .form-control {
+    background-color: #111827; /* Dark Gray */
+    border: 1px solid #6B7280; /* Slate Gray */
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .form-control::placeholder {
+    color: #6B7280; /* Slate Gray */
+  }
+
+  .cart {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .cart svg {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .sidebar {
+    background-color: #111827; /* Dark Gray */
+    border-right: 1px solid #6B7280; /* Slate Gray */
+  }
+
+  .sidebar h3 {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .sidebar .nav-link {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .sidebar .nav-link:hover {
+    background-color: #10B981; /* Success Green */
+    color: #F9FAFB; /* Soft White */
+  }
+
+  .sidebar .nav-link.active {
+    background-color: #1E40AF; /* Navy Blue */
+    color: #F9FAFB; /* Soft White */
+  }
+
+  .sidebar button {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .sidebar button:hover {
+    color: #F43F5E; /* Bright Coral */
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-search {
+    margin: 10px 0;
+  }
+}

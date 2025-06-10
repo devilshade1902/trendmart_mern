@@ -1,0 +1,175 @@
+.footer {
+  background-color: #374151; /* Slightly lighter than Charcoal Gray for contrast */
+  color: #D1D5DB; /* Light Gray */
+  padding: 2rem 0; /* Reduced padding */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Reduced gap between sections */
+  max-width: 1200px; /* Matches Hero and SubscribeNL */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 160px; /* Smaller min-width for compactness */
+}
+
+.footer-brand {
+  flex: 1.2; /* Slightly reduced width */
+}
+
+.footer-logo {
+  font-size: 1.75rem; /* Smaller logo text */
+  font-weight: 700;
+  color: #F9FAFB; /* Soft White */
+  margin-bottom: 0.25rem; /* Reduced margin */
+}
+
+.footer-description {
+  font-size: 0.9rem; /* Smaller text */
+  color: #9CA3AF; /* Lighter Slate Gray */
+  max-width: 250px; /* Narrower for compactness */
+}
+
+.footer-social h3,
+.footer-links h3 {
+  font-size: 1.1rem; /* Smaller headings */
+  font-weight: 600;
+  color: #F9FAFB; /* Soft White */
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem; /* Smaller gap between icons */
+}
+
+.social-icons a {
+  color: #D1D5DB; /* Light Gray */
+  font-size: 1.25rem; /* Smaller icons */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #1E40AF; /* Navy Blue */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.25rem; /* Reduced spacing between links */
+}
+
+.footer-links a {
+  color: #D1D5DB; /* Light Gray */
+  text-decoration: none;
+  font-size: 0.9rem; /* Smaller links */
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #1E40AF; /* Navy Blue */
+}
+
+.footer-bottom {
+  border-top: 1px solid #4B5563; /* Dark Gray border */
+  margin-top: 1rem; /* Reduced margin */
+  padding-top: 0.75rem; /* Reduced padding */
+  text-align: center;
+}
+
+.footer-bottom-links {
+  margin-bottom: 0.25rem; /* Reduced margin */
+}
+
+.footer-bottom-links a {
+  color: #D1D5DB; /* Light Gray */
+  text-decoration: none;
+  margin: 0 0.25rem; /* Smaller margins */
+  font-size: 0.85rem; /* Smaller text */
+}
+
+.footer-bottom-links a:hover {
+  color: #1E40AF; /* Navy Blue */
+}
+
+.footer-bottom-links span {
+  color: #6B7280; /* Slate Gray */
+}
+
+.footer-bottom p {
+  font-size: 0.85rem; /* Smaller copyright text */
+  color: #9CA3AF; /* Lighter Slate Gray */
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .footer {
+    padding: 1.5rem 0; /* Further reduced for mobile */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem; /* Reduced gap */
+    text-align: center;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-description {
+    margin: 0 auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-links ul {
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: unset; /* Remove min-width for mobile */
+  }
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #111827; /* Darker Gray */
+  }
+
+  .footer-logo,
+  .footer-social h3,
+  .footer-links h3 {
+    color: #F9FAFB; /* Soft White */
+  }
+
+  .social-icons a,
+  .footer-links a,
+  .footer-bottom-links a {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .social-icons a:hover,
+  .footer-links a:hover,
+  .footer-bottom-links a:hover {
+    color: #1E40AF; /* Navy Blue */
+  }
+
+  .footer-bottom {
+    border-top-color: #4B5563; /* Dark Gray */
+  }
+}

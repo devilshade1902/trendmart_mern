@@ -1,0 +1,120 @@
+.hero {
+  background-color: #F9FAFB; /* Soft White */
+  padding: 2rem 0; /* Reduced padding */
+}
+
+.hero-right{
+  margin-bottom: -30px;
+}
+
+.hero-left {
+  color: #1F2937; /* Charcoal Gray */
+}
+
+.display-4 {
+  font-size: 2rem; /* Smaller for compact layout */
+  line-height: 1.4; /* Two-line readability */
+  white-space: pre-line; /* Respect \n for line breaks */
+  max-width: 350px; /* Adjusted for smaller section */
+}
+
+.lead {
+  color: #6B7280; /* Slate Gray */
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #1E40AF; /* Navy Blue */
+  border-color: #1E40AF;
+  color: #F9FAFB; /* Soft White */
+}
+
+.btn-primary:hover {
+  background-color: #1E3A8A; /* Darker Navy Blue */
+  border-color: #1E3A8A;
+}
+
+.hero-image-container {
+  width: 100%;
+  height: 500px; /* Further reduced height */
+  aspect-ratio: 4 / 3; /* More square for compact layout */
+  overflow: hidden; /* Ensure circular clipping */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%; /* Fill container */
+  background: transparent; /* Ensure no background */
+}
+
+.hero-image-circular {
+  border-radius: 50%; /* Circular shape */
+}
+
+.carousel-inner {
+  background: transparent; /* Ensure no background behind images */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #1E40AF; /* Navy Blue */
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .hero {
+    padding: 1rem 0; /* Further reduced for mobile */
+  }
+
+  .display-4 {
+    font-size: 1.4rem; /* Smaller for mobile */
+    line-height: 1.4;
+    max-width: 250px; /* Adjusted for mobile */
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .btn-lg {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background-color: #111827; /* Dark Gray */
+  }
+
+  .hero-left {
+    color: #D1D5DB; /* Light Gray */
+  }
+
+  .lead {
+    color: #6B7280; /* Slate Gray */
+  }
+
+  .hero-image-container {
+    box-shadow: 0 4px 8px rgba(249, 250, 251, 0.2); /* Soft White shadow */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #1E40AF; /* Navy Blue */
+  }
+}

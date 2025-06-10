@@ -1,0 +1,147 @@
+.subscribeNL-container {
+  background-color: #F9FAFB; /* Soft White, matches Hero */
+  padding: 2rem 0; /* Consistent with Hero padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Match container width from Hero */
+  margin: 0 auto; /* Center the section */
+  margin-top: 60px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+
+.subscribe-left {
+  flex: 1;
+  padding: 0 1rem;
+  color: #1F2937; /* Charcoal Gray */
+}
+
+.subscribe-left p {
+  font-size: 2rem; /* Slightly larger than Hero's lead */
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 350px; /* Consistent with Hero's text width */
+}
+
+.subscribe-right {
+  flex: 1;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subscribe-right form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between input and button */
+  max-width: 400px; /* Limit form width */
+  width: 100%;
+}
+
+.subscribe-right input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #D1D5DB; /* Light Gray border */
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.subscribe-right input:focus {
+  border-color: #1E40AF; /* Navy Blue on focus */
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2); /* Subtle focus ring */
+}
+
+.subscribe-right button {
+  background-color: #1E40AF; /* Navy Blue, matches Hero button */
+  border: none;
+  color: #F9FAFB; /* Soft White */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.subscribe-right button:hover {
+  background-color: #1E3A8A; /* Darker Navy Blue */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.subscribe-right button:active {
+  transform: translateY(0); /* Reset on click */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .subscribeNL-container {
+    flex-direction: column;
+    padding: 1rem 0; /* Reduced for mobile, matches Hero */
+    text-align: center;
+  }
+
+  .subscribe-left {
+    margin-bottom: 1rem;
+  }
+
+  .subscribe-left p {
+    font-size: 1.2rem; /* Smaller for mobile */
+    max-width: 250px; /* Matches Hero's mobile text width */
+    margin: 0 auto;
+  }
+
+  .subscribe-right {
+    justify-content: center;
+  }
+
+  .subscribe-right form {
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 300px; /* Slightly smaller on mobile */
+  }
+
+  .subscribe-right input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .subscribe-right button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  .subscribeNL-container {
+    background-color: #111827; /* Dark Gray, matches Hero */
+  }
+
+  .subscribe-left {
+    color: #D1D5DB; /* Light Gray, matches Hero */
+  }
+
+  .subscribe-right input {
+    background-color: #1F2937; /* Slightly lighter dark gray */
+    border-color: #4B5563; /* Darker border */
+    color: #D1D5DB; /* Light Gray text */
+  }
+
+  .subscribe-right input:focus {
+    border-color: #1E40AF; /* Navy Blue */
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
+  }
+
+  .subscribe-right button {
+    background-color: #1E40AF; /* Navy Blue */
+  }
+
+  .subscribe-right button:hover {
+    background-color: #1E3A8A; /* Darker Navy Blue */
+  }
+}
