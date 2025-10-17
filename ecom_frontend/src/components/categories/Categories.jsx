@@ -1,22 +1,25 @@
 import React from 'react';
 import './Categories.css';
 import Product from '../Product/Product';
-import { clothes } from '../../assets/data';
+import { useSelector } from 'react-redux';
 
 const Categories = ({ category }) => {
+  const categories = useSelector((state)=>state.products.items) 
+
+  
   const getFilteredProducts = () => {
-    if (!category) return clothes; // Show all products for /products
+    if (!category) return categories; // Show all products for /products
     switch (category) {
       case 'mens':
-        return clothes.filter((item) => item.gender === 'male');
+        return categories.filter((item) => item.gender === 'male');
       case 'womens':
-        return clothes.filter((item) => item.gender === 'female');
+        return categories.filter((item) => item.gender === 'female');
       case 'kids':
-        return clothes.filter((item) => item.gender === 'kid');
+        return categories.filter((item) => item.gender === 'kid');
       case 'electronics':
-        return clothes.filter((item) => item.category === 'electronics');
+        return categories.filter((item) => item.category === 'electronics');
       default:
-        return clothes;
+        return categories;
     }
   };
 

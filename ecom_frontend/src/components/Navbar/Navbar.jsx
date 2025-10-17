@@ -37,14 +37,16 @@ const Navbar = () => {
             </div>
           </div>
           <div className="d-flex align-items-center">
-            <Link to='/cart' style={{textDecoration:'none'}}>
+            <Link to='/cart' style={{ textDecoration: 'none' }}>
               <div className="cart me-3">
                 <FaShoppingCart />
                 <span className="ms-1">Cart</span>
               </div>
             </Link>
-            <button className="btn btn-primary me-2">Login</button>
-            <button className="btn btn-secondary">Sign Up</button>
+            <button className="btn btn-primary me-2"><Link to='/login' style={{textDecoration:'none', color:'white'}}>
+              Login
+            </Link></button>
+            <button className="btn btn-secondary"><Link to='/signup' style={{textDecoration:'none', color:'white'}}>Sign Up</Link></button>
           </div>
         </div>
       </nav>
