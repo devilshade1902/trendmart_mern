@@ -3,6 +3,9 @@
   background-color: #f9f9ff;
   font-family: "Poppins", sans-serif;
 }
+.cart-item-right{
+  display: flex;
+}
 
 .cart-title {
   text-align: center;

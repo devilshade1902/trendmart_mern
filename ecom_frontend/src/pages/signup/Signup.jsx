@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./Signup.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
   const [signupData, setSignupData] = useState({
-    name: '',
-    email: '',
-    phone_no: '',
-    address: '',
-    password: '',
-    confirm_password: '',
+    name: "",
+    email: "",
+    phone_no: "",
+    address: "",
+    password: "",
+    confirm_password: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,29 +27,68 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setIsLoading(true);
-    console.log(signupData)
+    console.log(signupData);
 
     // Basic validation
-    if (!signupData.name || !signupData.email || !signupData.phone_no || !signupData.address || !signupData.password || !signupData.confirm_password) {
-      setError('All fields are required.');
+    if (
+      !signupData.name ||
+      !signupData.email ||
+      !signupData.phone_no ||
+      !signupData.address ||
+      !signupData.password ||
+      !signupData.confirm_password
+    ) {
+      setError("All fields are required.");
       setIsLoading(false);
       return;
     }
 
     if (signupData.password !== signupData.confirm_password) {
-      setError('Passwords do not match.');
+      setError("Passwords do not match.");
       setIsLoading(false);
       return;
     }
-
-
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: signupData.name,
+          email: signupData.email,
+          phone_no: signupData.phone_no,
+          address: signupData.address,
+          password: signupData.password,
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert("Signup successful!");
+        setSignupData({
+          name: "",
+          email: "",
+          phone_no: "",
+          address: "",
+          password: "",
+          confirm_password: "",
+        });
+        navigate('/login')
+      } else {
+        setError(data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setError("Server error. Please try again later.");
+    }
+    setIsLoading(false);
   };
 
   return (
     <div className="signup container">
-      <h3>Signup</h3>
+      <h3 className="text-white">Signup</h3>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
@@ -103,7 +146,7 @@ const Signup = () => {
           required
         />
         <button type="submit" disabled={isLoading}>
-          {isLoading ? 'Signing up...' : 'Signup'}
+          {isLoading ? "Signing up..." : "Signup"}
         </button>
       </form>
     </div>

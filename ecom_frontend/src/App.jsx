@@ -7,11 +7,13 @@ import Categories from './components/categories/Categories'
 import Cart from './components/Cart/Cart'
 import Login from './pages/Login/Login.jsx'
 import Signup from './pages/signup/Signup.jsx'
+import { ToastContainer } from "react-toastify"
 
 function App() {
 
   return (
       <BrowserRouter>
+       <ToastContainer position="bottom-right" autoClose={2000} />
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />

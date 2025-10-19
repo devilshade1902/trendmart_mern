@@ -43,6 +43,7 @@ const Navbar = () => {
                 <span className="ms-1">Cart</span>
               </div>
             </Link>
+            
             <button className="btn btn-primary me-2"><Link to='/login' style={{textDecoration:'none', color:'white'}}>
               Login
             </Link></button>

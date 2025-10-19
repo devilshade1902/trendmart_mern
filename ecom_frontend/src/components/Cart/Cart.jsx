@@ -1,11 +1,14 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../../cartSlice";
+import { addToCart, removeFromCart, deleteFromCart } from "../../cartSlice";
 import "./Cart.css";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { items, totalQuantity, totalPrice } = useSelector((state) => state.cart);
+  const { items, totalQuantity, totalPrice } = useSelector(
+    (state) => state.cart
+  );
 
   return (
     <div className="cart-page">
@@ -18,7 +21,11 @@ const Cart = () => {
           {items.map((item) => (
             <div key={item.id} className="cart-item-card">
               <div className="cart-item-left">
-                <img src={item.image_url} alt={item.name} className="cart-item-img" />
+                <img
+                  src={item.image_url}
+                  alt={item.name}
+                  className="cart-item-img"
+                />
                 <div className="cart-item-info">
                   <h3 className="cart-item-name">{item.name}</h3>
                   <p className="cart-item-size">Size: {item.size}</p>
@@ -26,22 +33,37 @@ const Cart = () => {
                 </div>
               </div>
 
-              <div className="cart-item-right">
+              <div className="cart-item-right flex gap-3">
                 <div className="quantity-controls">
                   <button
                     className="quantity-btn"
-                    onClick={() => dispatch(removeFromCart(item))}
+                    onClick={() => {
+                      dispatch(removeFromCart(item));
+                      toast.info(`${item.name} removed from cart`);
+                    }}
                   >
                     −
                   </button>
                   <span className="quantity-value">{item.quantity}</span>
                   <button
                     className="quantity-btn"
-                    onClick={() => dispatch(addToCart(item))}
+                    onClick={() => {
+                      dispatch(addToCart(item));
+                      toast.success(`${item.name} added to cart`);
+                    }}
                   >
                     +
                   </button>
                 </div>
+                <button
+                  className="quantity-btn"
+                  onClick={() => {
+                    dispatch(deleteFromCart(item));
+                    toast.error(`${item.name} removed completely from cart`);
+                  }}
+                >
+                  X
+                </button>
               </div>
             </div>
           ))}
