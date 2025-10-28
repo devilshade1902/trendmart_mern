@@ -1,85 +1,149 @@
-/* Light Theme (default) */
+/* 🌤️ Base Navbar */
 .navbar {
-  background-color: #F9FAFB; /* Soft White */
-  box-shadow: 0 2px 4px rgba(17, 24, 39, 0.1); /* Dark Gray shadow */
+  background: linear-gradient(90deg, #f9fafb 0%, #f3f4f6 100%);
+  box-shadow: 0 2px 6px rgba(31, 41, 55, 0.1);
+  padding: 0.6rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
 }
 
+/* 🧭 Brand Logo */
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1F2937; /* Charcoal Gray */
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a8a;
   text-decoration: none;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
+.navbar-brand .brand-highlight {
+  color: #f43f5e; /* coral accent */
+}
+
+/* 🔍 Search Bar */
 .navbar-search {
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231F2937' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Charcoal Gray for hamburger icon */
+.input-group {
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #e5e7eb;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 2px #1e40af;
 }
 
 .input-group-text {
-  background-color: #F9FAFB; /* Soft White */
-  border: 1px solid #D1D5DB; /* Light Gray */
-  color: #6B7280; /* Slate Gray for search icon */
+  background-color: #f9fafb;
+  border: none;
+  color: #6b7280;
+  font-size: 1.2rem;
 }
 
 .form-control {
-  border: 1px solid #D1D5DB; /* Light Gray */
-  color: #1F2937; /* Charcoal Gray */
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #1f2937;
+  background-color: #fff;
 }
 
 .form-control::placeholder {
-  color: #6B7280; /* Slate Gray */
+  color: #9ca3af;
 }
 
+/* 🛒 Cart */
 .cart {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
-  color: #1F2937; /* Charcoal Gray */
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.cart:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
 }
 
 .cart svg {
-  font-size: 1.5rem;
-  color: #1F2937; /* Charcoal Gray */
+  font-size: 1.4rem;
+  margin-right: 6px;
+  color: #1e40af;
+}
+
+/* 🧍 Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  border-radius: 25px;
+  padding: 6px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
-  background-color: #1E40AF; /* Navy Blue */
-  border-color: #1E40AF;
-  color: #F9FAFB; /* Soft White */
+  background-color: #1e40af;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #1E3A8A; /* Slightly darker Navy Blue */
-  border-color: #1E3A8A;
+  background-color: #1e3a8a;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background-color: #F43F5E; /* Bright Coral */
-  border-color: #F43F5E;
-  color: #F9FAFB; /* Soft White */
+  background-color: #f43f5e;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background-color: #E11D48; /* Slightly darker Bright Coral */
-  border-color: #E11D48;
+  background-color: #e11d48;
+  transform: translateY(-1px);
 }
 
+.btn-danger {
+  background-color: #ef4444;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* 💬 Welcome Text */
+.text-white.me-2 {
+  font-weight: 500;
+  color: #374151 !important;
+  margin-right: 10px;
+}
+
+/* 📱 Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #F9FAFB; /* Soft White */
-  border-right: 1px solid #D1D5DB; /* Light Gray */
-  transition: left 0.3s ease-in-out;
+  left: -270px;
+  width: 270px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .sidebar.active {
@@ -87,113 +151,100 @@
 }
 
 .sidebar h3 {
-  font-size: 1.25rem;
-  color: #1F2937; /* Charcoal Gray */
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .sidebar .nav-link {
-  color: #1F2937; /* Charcoal Gray */
+  display: block;
+  color: #374151;
   padding: 10px 0;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  border-radius: 6px;
 }
 
 .sidebar .nav-link:hover {
-  background-color: #10B981; /* Success Green */
-  color: #F9FAFB; /* Soft White */
-  border-radius: 5px;
+  background-color: #10b981;
+  color: #ffffff;
+  padding-left: 10px;
 }
 
 .sidebar .nav-link.active {
-  background-color: #1E40AF; /* Navy Blue */
-  color: #F9FAFB; /* Soft White */
-  border-radius: 5px;
+  background-color: #1e40af;
+  color: #ffffff;
 }
 
 .sidebar button {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #1F2937; /* Charcoal Gray */
+  color: #1f2937;
   cursor: pointer;
 }
 
 .sidebar button:hover {
-  color: #F43F5E; /* Bright Coral */
+  color: #f43f5e;
 }
 
-/* Dark Theme */
+/* 🌑 Dark Theme */
 @media (prefers-color-scheme: dark) {
   .navbar {
-    background-color: #111827; /* Dark Gray */
-    box-shadow: 0 2px 4px rgba(249, 250, 251, 0.1); /* Soft White shadow */
+    background: linear-gradient(90deg, #1f2937 0%, #111827 100%);
+    box-shadow: 0 2px 6px rgba(249, 250, 251, 0.05);
   }
 
   .navbar-brand {
-    color: #D1D5DB; /* Light Gray */
+    color: #f9fafb;
   }
 
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D1D5DB' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Light Gray for hamburger icon */
+  .input-group {
+    background-color: #1f2937;
+    box-shadow: 0 0 0 1px #374151;
   }
 
   .input-group-text {
-    background-color: #111827; /* Dark Gray */
-    border: 1px solid #6B7280; /* Slate Gray */
-    color: #D1D5DB; /* Light Gray */
+    background-color: #1f2937;
+    color: #9ca3af;
   }
 
   .form-control {
-    background-color: #111827; /* Dark Gray */
-    border: 1px solid #6B7280; /* Slate Gray */
-    color: #D1D5DB; /* Light Gray */
-  }
-
-  .form-control::placeholder {
-    color: #6B7280; /* Slate Gray */
+    background-color: #1f2937;
+    color: #f9fafb;
   }
 
   .cart {
-    color: #D1D5DB; /* Light Gray */
-  }
-
-  .cart svg {
-    color: #D1D5DB; /* Light Gray */
+    background-color: #111827;
+    color: #f9fafb;
   }
 
   .sidebar {
-    background-color: #111827; /* Dark Gray */
-    border-right: 1px solid #6B7280; /* Slate Gray */
+    background-color: #111827;
+    border-right: 1px solid #374151;
   }
 
-  .sidebar h3 {
-    color: #D1D5DB; /* Light Gray */
-  }
-
-  .sidebar .nav-link {
-    color: #D1D5DB; /* Light Gray */
+  .sidebar h3,
+  .sidebar .nav-link,
+  .sidebar button {
+    color: #d1d5db;
   }
 
   .sidebar .nav-link:hover {
-    background-color: #10B981; /* Success Green */
-    color: #F9FAFB; /* Soft White */
-  }
-
-  .sidebar .nav-link.active {
-    background-color: #1E40AF; /* Navy Blue */
-    color: #F9FAFB; /* Soft White */
-  }
-
-  .sidebar button {
-    color: #D1D5DB; /* Light Gray */
-  }
-
-  .sidebar button:hover {
-    color: #F43F5E; /* Bright Coral */
+    background-color: #10b981;
+    color: #ffffff;
   }
 }
 
+/* 📱 Responsive */
 @media (max-width: 991px) {
   .navbar-search {
     margin: 10px 0;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .cart {
+    font-size: 0.95rem;
   }
 }

@@ -19,7 +19,7 @@ const Product_details = () => {
 
   const handleAddToCart = () => {
     if (!selectedSize) {
-      alert("Please select a size before adding to cart");
+      toast.warning("Please select a size before adding to cart")
       return;
     }
     dispatch(addToCart({ ...product_details, selectedSize }));

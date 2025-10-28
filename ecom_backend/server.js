@@ -1,37 +1,35 @@
-const express= require('express')
-const app = express();
-app.use(express.json());
-const port = 3000
-const mongoose = require('mongoose');
-const cors = require('cors')
-const authRoutes = require('./routes/auth')
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import authRoutes from './routes/auth.js';
+import productRoutes from './routes/productRoutes.js';
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/mydb";
+const app = express();
+
+// ✅ Middleware
+app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173',  
-  credentials: true,               
+  origin: 'http://localhost:5173',
+  credentials: true,
 }));
 
+// ✅ MongoDB connection
+const mongoURI = 'mongodb+srv://devilshade1902:dhruvtiger1708@trendmart.ka9p5rk.mongodb.net/TrendMart';
 
-const mongoURI = 'mongodb+srv://devilshade1902:dhruvtiger1708@trendmart.ka9p5rk.mongodb.net/TrendMart'; 
-
-    mongoose.connect(mongoURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => console.log('MongoDB connected successfully'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
-
-app.get('/',(req,res)=>{
-    res.send("hello world")
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
+.then(() => console.log('✅ MongoDB connected successfully'))
+.catch(err => console.error('❌ MongoDB connection error:', err));
 
-// routes
-app.use('/api/auth',authRoutes)
+// ✅ Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
+// ✅ Default route
+app.get('/', (req, res) => res.send('Hello World from TrendMart! 🚀'));
 
-app.listen(port, () => {
-    console.log(`server running on ${port}`)
-})
+// ✅ Start server
+const PORT = 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
