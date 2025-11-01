@@ -74,7 +74,8 @@
 }
 
 .cart:hover {
-  background-color: #e5e7eb;
+  background-color: black;
+  color: white;
   transform: translateY(-2px);
 }
 

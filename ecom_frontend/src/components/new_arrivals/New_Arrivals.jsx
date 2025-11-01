@@ -1,7 +1,6 @@
 import React from 'react'
 import './New_Arrivals.css'
 import Product from '../Product/Product'
-import { searchProducts,showProducts } from '../../productSlice'
 import { useSelector } from 'react-redux'
 
 const New_Arrivals = () => {

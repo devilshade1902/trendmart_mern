@@ -1,0 +1,13 @@
+name,price,old_price,stock,gender,category,sizes,image_url,rating,brand,description,is_new,arrival_date
+Bomber Jacket,499,699,250,male,jacket,"s,m,l,xl",jacket1.jpg,04-May,Levi's,A sleek bomber jacket with a relaxed fit,FALSE,21-12-2024
+Hoodie,499,699,50,male,shirt,"s,m,l,xl",hoodie1.avif,3.5/5,Soul Store,warm hoodie for cold weather and comfort fit,FALSE,21-03-2025
+T-Shirt,499,699,4,male,tshirt,"s,m,l,xl",tshirt3.jpg,4.5,H&M,"Bold graphic tee with vibrant print, made from breathable cotton.",FALSE,21-01-2025
+Tshirt Trendy,499,699,250,female,tshirt,"s,m,l,xl",tshirt4.jpg,05-May,Zara,"Oversized tee with a modern fit, perfect for streetwear looks.",TRUE,20-03-2024
+Classic Denim Jacket,499.99,699.99,25,male,jacket,"S,M,L,XL",denim_jacket.jpg,4,Levi's,"A timeless denim jacket with a relaxed fit, perfect for casual outings.",TRUE,15-03-2025
+OverSized T-Shirt for women,599.99,999.99,100,female,Oversized tshirt,"S,M,L,XL",os_tshirt.avif,4.5,H&M,"relaxed fit oversized tshirt, made with cotton",TRUE,21-05-2025
+OverSized Fit for women,599.99,999.99,100,female,Oversized tshirt,"S,M,L,XL",os_tshirt2.avif,4.5,H&M,"relaxed fit oversized tshirt, made with cotton",TRUE,21-05-2025
+Outfit for kid 1,399.99,599.99,100,kid,kid clothing,"S,M,L,XL",kid_1.jpg,3.5,Zara,relaxed fit,FALSE,20-02-2025
+Outfit for kid 2,399.99,599.99,100,kid,kid clothing,"S,M,L,XL",kid_2.jpg,3.5,Zara,relaxed fit,FALSE,20-02-2025
+Outfit for kid 3,399.99,599.99,100,kid,kid clothing,"S,M,L,XL",kid_3.jpg,3.5,Zara,relaxed fit,FALSE,20-02-2025
+Outfit for kid 4,399.99,599.99,100,kid,kid clothing,"S,M,L,XL",kid_4.jpg,3.5,Zara,relaxed fit,FALSE,20-02-2025
+Outfit for kid 5,399.99,599.99,100,kid,kid clothing,"S,M,L,XL",kid_4.jpg,3.5,Zara,relaxed fit,FALSE,20-02-2025

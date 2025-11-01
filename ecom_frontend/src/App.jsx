@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify"
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchProfile } from './authSlice.js'
+import { fetchProducts } from './productSlice.js'
 
 function App() {
   const dispatch = useDispatch()
@@ -19,6 +20,9 @@ function App() {
     dispatch(fetchProfile())
   },[dispatch])
 
+  useEffect(()=>{
+    fetchProducts()
+  },[])
   return (
       <BrowserRouter>
        <ToastContainer position="bottom-right" autoClose={2000} />
