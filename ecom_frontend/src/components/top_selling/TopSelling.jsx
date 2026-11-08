@@ -24,7 +24,7 @@ const TopSelling = () => {
   if (!products || products.length === 0) {
     return <p className="text-center mt-4">No products found.</p>;
   }
-
+console.log(products,"products")
   return (
     <div className="top-selling-container">
       <h2>Top Sellers</h2>

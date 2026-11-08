@@ -9,13 +9,17 @@ const Product_details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
-  const product_details = products.find((product) => product.id == id);
+const product_details = products.find(
+  (product) => product._id === id
+);
   const cart_details = useSelector((state) => state.cart.items);
   const [selectedSize, setSelectedSize] = useState("");
   if (!product_details) {
     return <h2>Product not found</h2>;
   }
-  const cartItem = cart_details.find((item) => item.id === product_details.id);
+const cartItem = cart_details.find(
+  (item) => item._id === product_details._id
+);
 
   const handleAddToCart = () => {
     if (!selectedSize) {

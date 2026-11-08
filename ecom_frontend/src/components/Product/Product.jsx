@@ -27,11 +27,11 @@ const Product = ({ item }) => {
     if (!value) return 'N/A';
     return typeof value === 'string' && value.includes('₹') ? value : `₹${Number(value).toFixed(2)}`;
   };
-
+  
   return (
     <div className="product-card">
       {item.is_new && <span className="new-badge">New</span>}
-      <Link to={`/products/${item.id}`}>
+      <Link to={`/products/${item._id}`}>
         <img src={item.image_url} alt={item.name || 'Product'} />
       </Link>
       <div className="card-body">
